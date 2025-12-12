@@ -53,10 +53,9 @@
     background-color: #999999 !important;
   }
 
-  /* CTE rectangle - high visibility border */
+  /* CTE rectangle */
   .cte-rect {
     stroke: var(--color-cte) !important;
-    stroke-width: 2px !important;
     fill: var(--color-bg-white) !important;
     fill-opacity: 80% !important;
   }
@@ -78,12 +77,10 @@
   .plan-node .btn-light {
     background-color: var(--color-gray-lightest) !important;
     border-color: var(--color-line) !important;
-    border-width: 2px !important;
     color: var(--color-text) !important;
   }
   .plan-node .btn-light:hover {
     background-color: var(--color-gray-light) !important;
-    border-color: var(--color-text-muted) !important;
   }
 
   /* Syntax highlighting - maximum contrast */
@@ -140,11 +137,10 @@
     border-color: var(--color-line) !important;
   }
 
-  /* Stats tables (cards) - visible borders */
+  /* Stats tables (cards) */
   .card {
     background-color: var(--color-bg-white) !important;
     border-color: var(--color-line) !important;
-    border-width: 2px !important;
   }
   .card-body {
     background-color: var(--color-bg-white) !important;
@@ -153,22 +149,18 @@
   /* Navbar */
   .navbar {
     background-color: var(--color-bg-white) !important;
-    border-bottom: 2px solid var(--color-line) !important;
   }
 
-  /* Nav pills/tabs - high contrast active state */
+  /* Nav pills/tabs */
   .nav-pills .nav-link {
     color: var(--color-text-light);
-    border: 1px solid transparent;
   }
   .nav-pills .nav-link.active {
     background-color: var(--color-line);
     color: var(--color-text);
-    border: 2px solid var(--color-text-muted);
   }
   .nav-pills .nav-link:hover:not(.active) {
     color: var(--color-text);
-    border-color: var(--color-line);
   }
 
   /* Focus states - very visible outlines */
@@ -184,23 +176,20 @@
     outline-offset: 2px !important;
   }
 
-  /* Buttons - high contrast borders */
+  /* Buttons */
   .btn-outline-secondary {
     color: var(--color-text);
     border-color: var(--color-line);
-    border-width: 2px;
   }
   .btn-outline-secondary:hover,
   .btn-outline-secondary.active {
     background-color: var(--color-line);
-    border-color: var(--color-text-muted);
     color: var(--color-text);
   }
 
   .btn-secondary {
     background-color: var(--color-line);
     border-color: var(--color-text-muted);
-    border-width: 2px;
     color: var(--color-text);
   }
 
@@ -209,11 +198,10 @@
     text-decoration: underline !important;
   }
 
-  /* Form inputs - visible borders */
+  /* Form inputs */
   .form-control {
     background-color: var(--color-bg-node);
     border-color: var(--color-line);
-    border-width: 2px;
     color: var(--color-text);
   }
   .form-control:focus {
@@ -225,11 +213,10 @@
     color: var(--color-text-muted);
   }
 
-  /* Alerts - high contrast */
+  /* Alerts */
   .alert-warning {
     background-color: #332200;
     border-color: var(--color-highlight);
-    border-width: 2px;
     color: var(--color-highlight);
   }
 
@@ -237,7 +224,6 @@
   .list-group-item {
     background-color: var(--color-bg-white);
     border-color: var(--color-line);
-    border-width: 2px;
     color: var(--color-text);
   }
   .list-group-item-action:hover {
@@ -245,14 +231,12 @@
   }
   .list-group-item.active {
     background-color: var(--color-line);
-    border-color: var(--color-text-muted);
   }
 
   /* Dropdowns */
   .dropdown-menu {
     background-color: var(--color-bg-white);
     border-color: var(--color-line);
-    border-width: 2px;
   }
   .dropdown-item {
     color: var(--color-text);
@@ -279,7 +263,6 @@
   .page-link {
     background-color: var(--color-bg-white);
     border-color: var(--color-line);
-    border-width: 2px;
     color: var(--color-text);
   }
   .page-link:hover {
@@ -288,7 +271,6 @@
   }
   .page-item.active .page-link {
     background-color: var(--color-line);
-    border-color: var(--color-text-muted);
   }
   .page-item.disabled .page-link {
     background-color: var(--color-bg);
