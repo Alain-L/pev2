@@ -1,0 +1,305 @@
+/* High contrast mode overrides for Bootstrap - loaded after Bootstrap CSS */
+/* Uses CSS variables from pev2 library (_css-variables.scss) */
+/* WCAG AAA compliant: text ≥7:1, UI components ≥3:1 */
+
+[data-theme="high-contrast"] {
+  /* Override Bootstrap backgrounds */
+  .bg-light,
+  .plan-container.bg-light {
+    background-color: var(--color-bg) !important;
+  }
+  .bg-white,
+  .plan-container .bg-white {
+    background-color: var(--color-bg-white) !important;
+  }
+
+  /* Plan view specific */
+  .plan-container {
+    background-color: var(--color-bg) !important;
+  }
+
+  /* Plan diagram sidebar */
+  .plan-diagram {
+    background-color: var(--color-bg) !important;
+    color: var(--color-text) !important;
+  }
+  .plan-diagram th,
+  .plan-diagram td {
+    color: var(--color-text) !important;
+  }
+  .plan-diagram .subplan {
+    color: var(--color-text-light) !important;
+  }
+
+  /* Plan grid */
+  .plan-grid {
+    background-color: var(--color-bg) !important;
+  }
+
+  /* Splitpanes (main diagram area) */
+  .splitpanes__pane,
+  .plan.grab-bing,
+  .tab-pane {
+    background-color: var(--color-bg) !important;
+  }
+
+  /* Splitpanes divider - more visible */
+  .splitpanes__splitter {
+    background-color: var(--color-line) !important;
+    border-color: var(--color-line) !important;
+  }
+  .splitpanes__splitter:before,
+  .splitpanes__splitter:after {
+    background-color: #999999 !important;
+  }
+
+  /* CTE rectangle - high visibility border */
+  .cte-rect {
+    stroke: var(--color-cte) !important;
+    stroke-width: 2px !important;
+    fill: var(--color-bg-white) !important;
+    fill-opacity: 80% !important;
+  }
+
+  /* Never executed nodes (hatched pattern) - more visible */
+  .never-executed,
+  .bg-hatched {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 5px,
+      var(--color-gray-light) 5px,
+      var(--color-gray-light) 10px
+    ) !important;
+    background-color: var(--color-bg-white) !important;
+  }
+
+  /* Node labels - high contrast */
+  .plan-node .btn-light {
+    background-color: var(--color-gray-lightest) !important;
+    border-color: var(--color-line) !important;
+    border-width: 2px !important;
+    color: var(--color-text) !important;
+  }
+  .plan-node .btn-light:hover {
+    background-color: var(--color-gray-light) !important;
+    border-color: var(--color-text-muted) !important;
+  }
+
+  /* Syntax highlighting - maximum contrast */
+  /* Strings */
+  .hljs-string {
+    color: #66ff66 !important;
+  }
+
+  /* Numbers/costs */
+  .hljs-number {
+    color: #ffcc66 !important;
+  }
+
+  /* SQL keywords */
+  .text-primary,
+  .hljs-keyword,
+  .hljs-built_in {
+    color: var(--color-link) !important;
+  }
+
+  /* Comments */
+  .hljs-comment {
+    color: #999999 !important;
+  }
+
+  /* Table headers */
+  .table-secondary {
+    --bs-table-bg: var(--color-gray-lightest) !important;
+    --bs-table-color: var(--color-text) !important;
+  }
+
+  /* Tables */
+  .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--color-text);
+    --bs-table-hover-bg: var(--color-bg-node);
+    --bs-table-hover-color: var(--color-text);
+    --bs-table-striped-bg: var(--color-bg-white);
+    color: var(--color-text);
+  }
+  .table > :not(caption) > * > * {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-line) !important;
+  }
+  .table-hover > tbody > tr:hover > * {
+    background-color: var(--color-bg-node) !important;
+  }
+
+  /* Grid specific */
+  .plan-grid td,
+  .plan-grid th {
+    background-color: transparent !important;
+    border-color: var(--color-line) !important;
+  }
+
+  /* Stats tables (cards) - visible borders */
+  .card {
+    background-color: var(--color-bg-white) !important;
+    border-color: var(--color-line) !important;
+    border-width: 2px !important;
+  }
+  .card-body {
+    background-color: var(--color-bg-white) !important;
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: var(--color-bg-white) !important;
+    border-bottom: 2px solid var(--color-line) !important;
+  }
+
+  /* Nav pills/tabs - high contrast active state */
+  .nav-pills .nav-link {
+    color: var(--color-text-light);
+    border: 1px solid transparent;
+  }
+  .nav-pills .nav-link.active {
+    background-color: var(--color-line);
+    color: var(--color-text);
+    border: 2px solid var(--color-text-muted);
+  }
+  .nav-pills .nav-link:hover:not(.active) {
+    color: var(--color-text);
+    border-color: var(--color-line);
+  }
+
+  /* Focus states - very visible outlines */
+  *:focus {
+    outline: 3px solid var(--color-link) !important;
+    outline-offset: 2px !important;
+  }
+  *:focus:not(:focus-visible) {
+    outline: none !important;
+  }
+  *:focus-visible {
+    outline: 3px solid var(--color-link) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Buttons - high contrast borders */
+  .btn-outline-secondary {
+    color: var(--color-text);
+    border-color: var(--color-line);
+    border-width: 2px;
+  }
+  .btn-outline-secondary:hover,
+  .btn-outline-secondary.active {
+    background-color: var(--color-line);
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+  }
+
+  .btn-secondary {
+    background-color: var(--color-line);
+    border-color: var(--color-text-muted);
+    border-width: 2px;
+    color: var(--color-text);
+  }
+
+  .btn-link {
+    color: var(--color-link);
+    text-decoration: underline !important;
+  }
+
+  /* Form inputs - visible borders */
+  .form-control {
+    background-color: var(--color-bg-node);
+    border-color: var(--color-line);
+    border-width: 2px;
+    color: var(--color-text);
+  }
+  .form-control:focus {
+    background-color: var(--color-bg-white);
+    border-color: var(--color-link);
+    color: var(--color-text);
+  }
+  .form-control::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  /* Alerts - high contrast */
+  .alert-warning {
+    background-color: #332200;
+    border-color: var(--color-highlight);
+    border-width: 2px;
+    color: var(--color-highlight);
+  }
+
+  /* List groups */
+  .list-group-item {
+    background-color: var(--color-bg-white);
+    border-color: var(--color-line);
+    border-width: 2px;
+    color: var(--color-text);
+  }
+  .list-group-item-action:hover {
+    background-color: var(--color-bg-node);
+  }
+  .list-group-item.active {
+    background-color: var(--color-line);
+    border-color: var(--color-text-muted);
+  }
+
+  /* Dropdowns */
+  .dropdown-menu {
+    background-color: var(--color-bg-white);
+    border-color: var(--color-line);
+    border-width: 2px;
+  }
+  .dropdown-item {
+    color: var(--color-text);
+  }
+  .dropdown-item:hover {
+    background-color: var(--color-bg-node);
+  }
+
+  /* Badges */
+  .text-bg-light {
+    background-color: var(--color-line) !important;
+    color: var(--color-text) !important;
+  }
+
+  /* Text utilities */
+  .text-secondary {
+    color: var(--color-text-muted) !important;
+  }
+  .text-body-tertiary {
+    color: var(--color-text-muted) !important;
+  }
+
+  /* Pagination */
+  .page-link {
+    background-color: var(--color-bg-white);
+    border-color: var(--color-line);
+    border-width: 2px;
+    color: var(--color-text);
+  }
+  .page-link:hover {
+    background-color: var(--color-bg-node);
+    color: var(--color-text);
+  }
+  .page-item.active .page-link {
+    background-color: var(--color-line);
+    border-color: var(--color-text-muted);
+  }
+  .page-item.disabled .page-link {
+    background-color: var(--color-bg);
+    color: var(--color-text-muted);
+  }
+
+  /* Links - always underlined for visibility */
+  a {
+    text-decoration: underline;
+  }
+  a:hover {
+    color: var(--color-highlight) !important;
+  }
+}

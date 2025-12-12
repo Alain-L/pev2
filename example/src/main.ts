@@ -2,6 +2,7 @@ import { createApp } from "vue"
 import "bootstrap"
 import "bootstrap/dist/css/bootstrap.css"
 import "./assets/dark-mode.css"
+import "./assets/high-contrast.css"
 
 import App from "./App.vue"
 
