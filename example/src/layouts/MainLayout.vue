@@ -3,7 +3,11 @@ import { inject } from "vue"
 import VLink from "../components/VLink.vue"
 import { useTheme } from "../composables/useTheme"
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
+import {
+  faSun,
+  faMoon,
+  faLowVision,
+} from "@fortawesome/free-solid-svg-icons"
 
 interface Props {
   title?: string
@@ -11,7 +15,7 @@ interface Props {
 
 const props = defineProps<Props>()
 const currentPath = inject("currentPath")
-const { theme, toggleTheme } = useTheme()
+const { theme, highContrast, toggleTheme, toggleHighContrast } = useTheme()
 </script>
 
 <template>
@@ -28,8 +32,23 @@ const { theme, toggleTheme } = useTheme()
         <VLink class="btn btn-link" to="/about">About</VLink>
         <button
           class="btn btn-link theme-toggle"
+          @click="toggleHighContrast"
+          :class="{ active: highContrast }"
+          :title="highContrast ? 'Disable high contrast mode' : 'Enable high contrast mode'"
+        >
+          <FontAwesomeIcon :icon="faLowVision" />
+        </button>
+        <button
+          class="btn btn-link theme-toggle"
           @click="toggleTheme"
-          :title="theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'"
+          :disabled="highContrast"
+          :title="
+            highContrast
+              ? 'Disabled while high contrast is active'
+              : theme === 'light'
+                ? 'Switch to dark mode'
+                : 'Switch to light mode'
+          "
         >
           <FontAwesomeIcon :icon="theme === 'light' ? faMoon : faSun" />
         </button>
@@ -38,3 +57,13 @@ const { theme, toggleTheme } = useTheme()
     <slot></slot>
   </div>
 </template>
+
+<style scoped>
+.theme-toggle.active {
+  color: var(--color-link, #0d6efd);
+}
+.theme-toggle:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+</style>
